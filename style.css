@@ -1,3 +1,4 @@
+/*--caracteristicas para toda la pagina--*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
@@ -13,13 +14,14 @@ html, body {
     height: 100%;
 }
 
+/*--contenedor principal para identidad, menu y contacto--*/
 .contenedor-principal {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* barra de navegación */
+/*--barra de navegación--*/
 .header {
     display: flex;
     justify-content: space-between;
@@ -28,11 +30,12 @@ html, body {
     background-color: #fff;
     height: 70px;
     box-shadow: 0 2px 8px #0000004D;
-    position: sticky;   /* ✅ clave */
-    top: 0;              /* ✅ se queda pegada al borde superior */
+    position: sticky;   
+    top: 0;             
     z-index: 1000;
 }
 
+/*Caracteristicas para el logo*/
 .logo {
     display: flex;
     align-items: center;
@@ -45,12 +48,14 @@ html, body {
     margin-right: 10px;
 }
 
+/*Caracteristicas para el nombre*/
 .nombre {
     font-size: 1.5rem;
     font-weight: bold;
     color: #333;
 }
 
+/*Caracteristicas de la barra de navegación */
 .navbar {
     display: flex;
     gap: 20px;
@@ -68,6 +73,7 @@ html, body {
     color: #FFAC1C;
 }
 
+/*Boton para desplogar el menu*/
 .menu-icon {
     display: none;
     flex-direction: column;
@@ -88,6 +94,7 @@ html, body {
     display: none;
 }
 
+/*Caracteristicas extra para adaptación a pantallas mas chicas*/
 @media (max-width: 768px) {
     .menu-icon {
         display: flex;
@@ -112,6 +119,7 @@ html, body {
     }
 }
 
+/*--contenedor para identidad, menu y contacto--*/
 .contenedor {
     display: flex;
     justify-content: center;  
@@ -121,12 +129,13 @@ html, body {
     flex: 1;
 }
 
-/* Presentación */
+/*--Apartado de presentación--*/
 .contenido1 {
     max-width: 100%;
     padding: 20px;
 }
 
+/*Contenedor de la presentación*/
 .presentacion {
     display: flex;
     align-items: center;
@@ -134,6 +143,7 @@ html, body {
     flex-wrap: wrap; 
 }
 
+/*Caracteristicas de la imagen de presentación*/
 .img {
     width: 100%;
     max-width: 300px;  
@@ -142,12 +152,14 @@ html, body {
     border-radius: 10px;
 }
 
+/*Caracteristicas del texto de presentación*/
 .presentacion p {
     flex: 1;            
     font-size: 1rem;
     color: #333;
 }
 
+/*Caracteristicas extra para adaptación a pantallas mas chicas*/
 @media (max-width: 768px) {
     .presentacion {
         flex-direction: column;
@@ -164,6 +176,7 @@ html, body {
     }
 }
 
+/*--Apartado con el contenido Principal: historia, identidad, menú--*/
 .contenido2 {
     max-width: 100%;
     padding: 20px;
@@ -171,6 +184,7 @@ html, body {
     justify-content: space-around;
 }
 
+/*Caracteristicas extra para adaptación a pantallas mas chicas*/
 @media (max-width: 768px) {
     .contenido2 { 
         flex-direction: column;
@@ -179,39 +193,47 @@ html, body {
     }
 }
 
-/*Apartado de Historia*/
+/*--Apartado de Historia--*/
+/*Oculta el checkbox que expande el contenedor de historia*/
 #idhistoria {
     display: none;
 }
 
+/*Caracteristicas del contenedor de historia*/
 .historia {
-    background-color: #FFAC1C;
-    color: white;
-    margin-top: 20px;
-    padding: 20px;
-    width: 250px;
-    height: 250px; 
-    overflow: hidden;
-    cursor: pointer;
-    transition: height 0.5s ease, width 0.5s ease, background-color 0.5s ease, border 0.3s ease;
-    border-radius: 8px;
-    display: block;
+    background-color: #FFAC1C;    
+    color: white;                 
+    margin-top: 20px;             
+    padding: 20px;                  
+    width: 250px;                   
+    height: 250px;                  
+    overflow: hidden;               
+    cursor: pointer;                
+    transition:                     
+        height 0.5s ease, 
+        width 0.5s ease, 
+        background-color 0.5s ease, 
+        border 0.3s ease;
+    border-radius: 8px;             
+    display: block;                 
 }
 
+/*Caracteristicas para la imagen dentro de el contenedor de historia*/
 .historia img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    display: block;
-    margin: 10px auto;
-    border-radius: 50%;
-    box-shadow: 0 2px 8px #0000004D;
-    transition: 
+    width: 100px;                       
+    height: 100px;                      
+    object-fit: cover;                  
+    display: block;                     
+    margin: 10px auto;                  
+    border-radius: 50%;                 
+    box-shadow: 0 2px 8px #0000004D; 
+    transition:                   
         width 0.4s ease,
         height 0.4s ease,
         border 0.4s ease;
 }
 
+/*Caracteristicas del contenido que se mostrara al expandirse*/
 .historia .contenido-expandido {
     opacity: 0;
     max-height: 0;
@@ -219,6 +241,7 @@ html, body {
     transition: opacity 0.5s ease, max-height 0.5s ease;
 }
 
+/*Caracteristicas de cuando el checkbox este marcado, se expande el contenedor de historia*/
 #idhistoria:checked + .historia {
     width: calc(100vw - 40px);
     height: auto;
@@ -228,17 +251,20 @@ html, body {
     border-radius: 15px;
 }
 
+/*Caracteristicas del contenido que se mostrara al expandirse*/
 #idhistoria:checked + .historia .contenido-expandido {
     opacity: 1;
-    max-height: 1000px; 
+    max-height: none; 
     margin-top: 15px;
 }
 
-/*Apartado de Identidad*/
+/*--Apartado de Identidad (codigo reutilizado de historia)--*/
+/*Oculta el checkbox que expande el contenedor de identidad*/
 #ididentidad {
     display: none;
 }
 
+/*Caracteristicas del contenedor de identidad*/
 .identidad {
     background-color: #FFAC1C;
     color: white;
@@ -253,11 +279,13 @@ html, body {
     display: block;
 }
 
+/*Caracteristicas que tendra el contenedor de identidad al abrirse el details junto con las listas*/
 .identidad summary, ul{
     list-style: none;
     text-align: center;
 }
 
+/*Caracteristicas que tendra el contenedor para el details*/
 .identidad details {
     background-color: #fff;
     color: #222;
@@ -266,6 +294,7 @@ html, body {
     padding: 15px;
 }
 
+/*Caracteristicas del contenido que se mostrara al expandirse*/
 .identidad .contenido-expandido {
     opacity: 0;
     max-height: 0;
@@ -273,6 +302,7 @@ html, body {
     transition: opacity 0.5s ease, max-height 0.5s ease;
 }
 
+/*Caracteristicas de cuando el checkbox este marcado, se expande el contenedor de identidad*/
 #ididentidad:checked + .identidad {
     width: calc(100vw - 40px);
     height: auto;
@@ -282,17 +312,20 @@ html, body {
     border-radius: 15px;
 }
 
+/*Caracteristicas del contenido que se mostrara al expandirse*/
 #ididentidad:checked + .identidad .contenido-expandido {
     opacity: 1;
     max-height: none;
     margin-top: 15px;
 }
 
-/*Apartado del Menú*/
+/*--Apartado de Menu (codigo reutilizado de historia)--*/
+/*Oculta el checkbox que expande el contenedor de menu*/
 #idmenu {
     display: none;
 }
 
+/*Caracteristicas del contenedor de menu*/
 .menu {
     background-color: #FFAC1C;
     color: white;
@@ -312,11 +345,13 @@ html, body {
         box-shadow 0.3s ease;
 }
 
+/*Caracteristica que tendran las listas de menu*/
 .menu ul,
 .menu li {
     text-align: start;
 }
 
+/*Caracteristicas del contenido que se mostrara al expandirse*/
 .menu .contenido-expandido {
     opacity: 0;
     max-height: 0;
@@ -326,6 +361,7 @@ html, body {
         max-height 0.5s ease;
 }
 
+/*Caracteristicas de cuando el checkbox este marcado, se expande el contenedor de menu*/
 #idmenu:checked + .menu {
     width: calc(100vw - 40px);
     height: auto;
@@ -335,12 +371,14 @@ html, body {
     border-radius: 15px;
 }
 
+/*Caracteristicas del contenido que se mostrara al expandirse*/
 #idmenu:checked + .menu .contenido-expandido {
     opacity: 1;
     max-height: 2000px;
     margin-top: 15px;
 }
 
+/*Caracteristicas que tendran las imagenes del menu*/
 .menu img {
     width: 200px;
     height: 200px;
@@ -355,13 +393,15 @@ html, body {
         border 0.4s ease;
 }
 
+/*Caracteristicas qeu tendran las imagenes del menu al pasar el cursor sobre ellas*/
 .menu img:hover {
     width: 250px;
     height: 250px;
     border: 5px solid #FFAC1C;
 }
 
-/*Footer*/
+/*--Apartado del pie de pagina--*/
+/*Caracteristicas del pie de pagina*/
 .footer {
     background-color: #222;
     color: white;
@@ -372,29 +412,33 @@ html, body {
     font-size: 1rem;
     }
 
+/*Caracterisricas del texto del pie de pagina*/
 .footer-contacto p,
 .footer-integrantes p,
 .footer-copy p {
     margin: 8px 0;
 }
 
+/*Caracteristicas de las listas del pie de pagina*/
 .footer-integrantes ul {
     list-style: none;
     padding: 0;
     margin: 10px 0;
 }
 
+/*Caracteristica de los elementos del las listas de pie de pagina*/
 .footer-integrantes li {
     margin: 5px 0;
 }
 
+/*Derechos de reservados*/
 .footer-copy {
     margin-top: 15px;
     font-size: 0.8em;
     color: #ccc;
 }
 
-/* Responsive */
+/*Caracteristicas extra para adaptación a pantallas mas chicas*/
 @media (max-width: 600px) {
     .footer {
         font-size: 14px;
